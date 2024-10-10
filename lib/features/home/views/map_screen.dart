@@ -54,7 +54,8 @@ class _HomeState extends State<MapScreen> {
                     },
                     onTap: (argument) {
                       appController.addCustomMarker(
-                          LatLng(argument.latitude, argument.longitude));
+                          LatLng(argument.latitude, argument.longitude),
+                          context);
                     },
                     markers: Set<Marker>.of(
                         UserDatabaseController.googleMapsMarkers),
@@ -71,7 +72,8 @@ class _HomeState extends State<MapScreen> {
                             ? Container()
                             : iconButton(
                                 icon: Icons.delete_rounded,
-                                onTap: () => appController.removeAllMarkers(),
+                                onTap: () =>
+                                    appController.removeAllMarkers(context),
                                 color: Colors.redAccent,
                               ),
                       ],
