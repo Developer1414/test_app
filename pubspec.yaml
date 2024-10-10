@@ -1,0 +1,38 @@
+name: test_app
+description: "A new Flutter project."
+publish_to: 'none'
+version: 0.1.0
+
+environment:
+  sdk: ^3.5.3
+
+dependencies:
+  cloud_firestore: ^5.4.4
+  dio: ^5.7.0
+  firebase_auth: ^5.3.1
+  firebase_core: ^3.6.0
+  flutter:
+    sdk: flutter
+  google_fonts: ^6.2.1
+  permission_handler: ^11.3.1
+  provider: ^6.1.2
+  google_maps_flutter: ^2.9.0
+  location: ^6.0.2
+  blurrycontainer: ^2.1.0
+  figma_squircle: ^0.5.3
+  http: ^1.2.2
+  wolt_modal_sheet: ^0.9.3
+  firebase_auth_mocks: ^0.14.1
+  mock_exceptions: ^0.8.2
+  fake_cloud_firestore: ^3.0.3
+  mockito: ^5.4.4
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^4.0.0
+  change_app_package_name: ^1.4.0
+  build_runner: ^2.4.13
+
+flutter:
+  uses-material-design: true
