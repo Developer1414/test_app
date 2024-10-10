@@ -21,6 +21,7 @@ jobs:
         uses: actions/setup-java@v2
         with:
           java-version: '17'
+          distribution: 'temurin'
 
       - name: Set up Flutter
         uses: subosito/flutter-action@v2
@@ -38,7 +39,7 @@ jobs:
 
       - name: Build Flutter APK
         run: |
-          flutter build apk --release
+          flutter build apk
 
       - name: Upload APK
         uses: actions/upload-artifact@v3
