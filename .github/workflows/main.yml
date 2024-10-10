@@ -10,6 +10,43 @@ on:
       - main
 
 jobs:
+  build_android:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up JDK 17
+        uses: actions/setup-java@v2
+        with:
+          java-version: '17'
+          distribution: 'temurin'
+
+      - name: Set up Flutter
+        uses: subosito/flutter-action@v2
+        with:
+          flutter-version: '3.24.3'
+
+      - name: Clean data
+        run: flutter clean
+
+      - name: Install dependencies
+        run: flutter pub get
+
+      - name: Run tests
+        run: flutter test
+
+      - name: Build Flutter APK
+        run: |
+          flutter build apk
+
+      - name: Upload APK
+        uses: actions/upload-artifact@v3
+        with:
+          name: my-app.apk
+          path: build/app/outputs/flutter-apk/app-release.apk
+
   build_ios:
     runs-on: macos-latest
 
@@ -49,3 +86,4 @@ jobs:
         with:
           name: my-app.ipa
           path: build/ios/iphoneos/*.ipa
+
